@@ -1,0 +1,141 @@
+﻿@model IEnumerable<Test.Models.Organization>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Organization</h2>
+
+<table class="table table-hover text-white table-bordered">
+    <tr class="table-primary text-white">
+        <th>
+            Organization ID
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+            Organization Name
+        </th>
+        <th>
+            Address
+        </th>
+        <th>
+            Phone No.
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        if (item.Email==(string)Session["OrgEmail"])
+        {
+            Session["OrgId"] = item.org_id;
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.org_id)
+                    
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.org_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ph_no)
+                </td>
+                <td>
+                    @*@Html.ActionLink("Edit", "Edit", new { id = item.org_id }) |*@
+                    @Html.ActionLink("Details", "Details", new { id = item.org_id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.org_id })
+                </td>
+            </tr>
+        }
+    }
+
+</table>
+<br />
+<br />
+<br />
+
+<div class="row">
+    <div class="col-md-4 border-primary">
+        <div class="card border-primary mb-3" style="max-width: 20rem;">
+            <div class="card-body">
+                <h4 class="btn btn-lg btn-block btn-outline-primary">@Html.ActionLink("Complaints","Index", "Complaints")</h4>
+                <p class="card-text">
+                    Please Don't waste your time reading this
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 border-primary">
+        <div class="card border-primary mb-3" style="max-width: 20rem;">
+            <div class="card-body">
+                <h4 class="btn btn-lg btn-block btn-outline-primary">@Html.ActionLink("Reviews", "Index", "Reviews")</h4>
+                <p class="card-text">
+                    Please Don't waste your time reading this
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 border-primary">
+        <div class="card border-primary mb-3" style="max-width: 20rem;">
+            <div class="card-body">
+                <h4 class="btn btn-lg btn-block btn-outline-primary">@Html.ActionLink("Rating", "Index", "Ratings")</h4>
+                <p class="card-text">
+                    Please Don't waste your time reading this
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4 border-primary">
+        <div class="card border-primary mb-3" style="max-width: 20rem;">
+            <div class="card-body">
+                <h4 class="btn btn-lg btn-block btn-outline-primary">@Html.ActionLink("Labor Assignments", "Index", "LabAsigns")</h4>
+                <p class="card-text">
+                    Please Don't waste your time reading this
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 border-primary">
+        <div class="card border-primary mb-3" style="max-width: 20rem;">
+            <div class="card-body">
+                <h4 class="btn btn-lg btn-block btn-outline-primary">@Html.ActionLink("Labors", "Index", "Labors")</h4>
+                <p class="card-text">
+                    Please Don't waste your time reading this
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 border-primary">
+        <div class="card border-primary mb-3" style="max-width: 20rem;">
+            <div class="card-body">
+                <h4 class="btn btn-lg btn-block btn-outline-primary">@Html.ActionLink("Pay Labors", "Index", "payrollLabs")</h4>
+                <p class="card-text">
+                    Please Don't waste your time reading this
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6 border-primary">
+        <div class="card border-primary mb-3" style="max-width: 20rem;">
+            <div class="card-body">
+                <h4 class="btn btn-lg btn-block btn-outline-primary">@Html.ActionLink("Customer Payments", "Index", "payrollCusts")</h4>
+                <p class="card-text">
+                    Please Don't waste your time reading this
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

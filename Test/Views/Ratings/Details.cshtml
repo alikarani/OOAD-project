@@ -1,0 +1,43 @@
+﻿@model Test.Models.Rating
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Rating</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.Cust_Firstname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.Cust_Firstname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Organization.org_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Organization.org_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rating_Values.values)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rating_Values.values)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Rat_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

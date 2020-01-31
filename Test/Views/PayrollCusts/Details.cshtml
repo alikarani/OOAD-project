@@ -1,0 +1,51 @@
+﻿@model Test.Models.PayrollCust
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PayrollCust</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.prCust_paymnt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prCust_paymnt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.prCust_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prCust_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.Cust_Firstname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.Cust_Firstname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Organization.org_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Organization.org_name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.prCust_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Test.Models.payrollLab>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-hover text-white table-bordered">
+    <tr class="table-primary text-white">
+        <th>
+            @Html.DisplayNameFor(model => model.prLab_paymnt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Labor.Lab_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Organization.org_name)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.prLab_paymnt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Labor.Lab_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Organization.org_name)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.prLab_id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.prLab_id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.prLab_id })
+            </td>
+        </tr>
+    }
+
+</table>

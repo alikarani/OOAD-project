@@ -1,0 +1,587 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RCMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Complaints">
+    <Key>
+      <PropertyRef Name="Cmplnt_Id" />
+    </Key>
+    <Property Name="Cmplnt_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Cmplnt_CustId" Type="int" />
+    <Property Name="Cmplnt_orgId" Type="int" />
+    <Property Name="Cmplnt_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="Complnt_content" Type="nvarchar(max)" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="Cust_id" />
+    </Key>
+    <Property Name="Cust_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Cust_Firstname" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cust_Lastname" Type="nchar" MaxLength="50" />
+    <Property Name="Cust_Address" Type="nchar" MaxLength="100" />
+    <Property Name="cust_cellno" Type="nchar" MaxLength="11" />
+  </EntityType>
+  <EntityType Name="LabAsign">
+    <Key>
+      <PropertyRef Name="LbAs_id" />
+    </Key>
+    <Property Name="LbAs_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LbAs_orgId" Type="int" />
+    <Property Name="LbAs_LabId" Type="int" />
+    <Property Name="LbAs_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="LbAs_CmplntId" Type="int" />
+    <Property Name="LbAs_complStatus" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Labor">
+    <Key>
+      <PropertyRef Name="Lab_id" />
+    </Key>
+    <Property Name="Lab_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Lab_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Lab_OrgId" Type="int" />
+    <Property Name="Lab_status" Type="int" />
+    <Property Name="Ph_no" Type="nvarchar" MaxLength="50" />
+    <Property Name="address" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="laborApplicationStatus">
+    <Key>
+      <PropertyRef Name="labAppstat_Id" />
+    </Key>
+    <Property Name="labAppstat_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="labAppStatus_s" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Organization">
+    <Key>
+      <PropertyRef Name="org_id" />
+    </Key>
+    <Property Name="org_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="org_name" Type="nvarchar(max)" />
+    <Property Name="address" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ph_no" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PayrollCust">
+    <Key>
+      <PropertyRef Name="prCust_id" />
+    </Key>
+    <Property Name="prCust_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="prCust_OrgId" Type="int" />
+    <Property Name="prCust_CustId" Type="int" />
+    <Property Name="prCust_paymnt" Type="float" />
+    <Property Name="prCust_date" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="payrollLab">
+    <Key>
+      <PropertyRef Name="prLab_id" />
+    </Key>
+    <Property Name="prLab_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="prLab_OrgId" Type="int" />
+    <Property Name="prLab_LabId" Type="int" />
+    <Property Name="prLab_paymnt" Type="int" />
+    <Property Name="prLab_date" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Rating_Values">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="float" Nullable="false" />
+    <Property Name="values" Type="float" />
+  </EntityType>
+  <EntityType Name="Ratings">
+    <Key>
+      <PropertyRef Name="Rat_Id" />
+    </Key>
+    <Property Name="Rat_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Rat_CustId" Type="int" />
+    <Property Name="Rat_orgId" Type="int" />
+    <Property Name="Rat_value" Type="float" />
+  </EntityType>
+  <EntityType Name="Registration">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="256" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="256" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="Password" Type="nvarchar" MaxLength="256" />
+    <Property Name="Phone_no" Type="nvarchar" MaxLength="50" />
+    <Property Name="Roles" Type="int" />
+    <Property Name="Address" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Registration2">
+    <Key>
+      <PropertyRef Name="Email" />
+    </Key>
+    <Property Name="Org_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ph_no" Type="nvarchar" MaxLength="11" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="Roles" Type="int" />
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Registration4">
+    <Key>
+      <PropertyRef Name="Email" />
+    </Key>
+    <Property Name="First_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Last_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ph_no" Type="nvarchar" MaxLength="11" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="Roles" Type="int" />
+    <Property Name="Org_ID" Type="int" />
+    <Property Name="Status" Type="int" />
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Reviews">
+    <Key>
+      <PropertyRef Name="Rev_Id" />
+    </Key>
+    <Property Name="Rev_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Rev_CustId" Type="int" />
+    <Property Name="Rev_orgId" Type="int" />
+    <Property Name="Rev_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="Rev_content" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="Role_Id" />
+    </Key>
+    <Property Name="Role_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Role_name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="St_ID" />
+    </Key>
+    <Property Name="St_ID" Type="int" Nullable="false" />
+    <Property Name="State" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="CHECK_Ratings_Values">
+    <End Role="Rating_Values" Type="Self.Rating_Values" Multiplicity="0..1" />
+    <End Role="Ratings" Type="Self.Ratings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rating_Values">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Ratings">
+        <PropertyRef Name="Rat_value" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Cmplnt_orgId_FK">
+    <End Role="Organization" Type="Self.Organization" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Complaints" Type="Self.Complaints" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Organization">
+        <PropertyRef Name="org_id" />
+      </Principal>
+      <Dependent Role="Complaints">
+        <PropertyRef Name="Cmplnt_orgId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Complnt_Cust_Id_Fk">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+    <End Role="Complaints" Type="Self.Complaints" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="Cust_id" />
+      </Principal>
+      <Dependent Role="Complaints">
+        <PropertyRef Name="Cmplnt_CustId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Lab_OrgId_FK">
+    <End Role="Organization" Type="Self.Organization" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Labor" Type="Self.Labor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Organization">
+        <PropertyRef Name="org_id" />
+      </Principal>
+      <Dependent Role="Labor">
+        <PropertyRef Name="Lab_OrgId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Lab_status_FK">
+    <End Role="laborApplicationStatus" Type="Self.laborApplicationStatus" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Labor" Type="Self.Labor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="laborApplicationStatus">
+        <PropertyRef Name="labAppstat_Id" />
+      </Principal>
+      <Dependent Role="Labor">
+        <PropertyRef Name="Lab_status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LabAs_CmplntId_FK">
+    <End Role="Complaints" Type="Self.Complaints" Multiplicity="0..1" />
+    <End Role="LabAsign" Type="Self.LabAsign" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Complaints">
+        <PropertyRef Name="Cmplnt_Id" />
+      </Principal>
+      <Dependent Role="LabAsign">
+        <PropertyRef Name="LbAs_CmplntId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LabAs_labId_FK">
+    <End Role="Labor" Type="Self.Labor" Multiplicity="0..1" />
+    <End Role="LabAsign" Type="Self.LabAsign" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Labor">
+        <PropertyRef Name="Lab_id" />
+      </Principal>
+      <Dependent Role="LabAsign">
+        <PropertyRef Name="LbAs_LabId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LabAs_orgId_FK">
+    <End Role="Organization" Type="Self.Organization" Multiplicity="0..1" />
+    <End Role="LabAsign" Type="Self.LabAsign" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Organization">
+        <PropertyRef Name="org_id" />
+      </Principal>
+      <Dependent Role="LabAsign">
+        <PropertyRef Name="LbAs_orgId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Org_Id_FK">
+    <End Role="Organization" Type="Self.Organization" Multiplicity="0..1" />
+    <End Role="Registration4" Type="Self.Registration4" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Organization">
+        <PropertyRef Name="org_id" />
+      </Principal>
+      <Dependent Role="Registration4">
+        <PropertyRef Name="Org_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PayrollLab_FK">
+    <End Role="Organization" Type="Self.Organization" Multiplicity="0..1" />
+    <End Role="payrollLab" Type="Self.payrollLab" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Organization">
+        <PropertyRef Name="org_id" />
+      </Principal>
+      <Dependent Role="payrollLab">
+        <PropertyRef Name="prLab_OrgId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PayrollLab_lab_FK">
+    <End Role="Labor" Type="Self.Labor" Multiplicity="0..1" />
+    <End Role="payrollLab" Type="Self.payrollLab" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Labor">
+        <PropertyRef Name="Lab_id" />
+      </Principal>
+      <Dependent Role="payrollLab">
+        <PropertyRef Name="prLab_LabId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="prCust_CustId_FK">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PayrollCust" Type="Self.PayrollCust" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="Cust_id" />
+      </Principal>
+      <Dependent Role="PayrollCust">
+        <PropertyRef Name="prCust_CustId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="prCust_OrgId_FK">
+    <End Role="Organization" Type="Self.Organization" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PayrollCust" Type="Self.PayrollCust" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Organization">
+        <PropertyRef Name="org_id" />
+      </Principal>
+      <Dependent Role="PayrollCust">
+        <PropertyRef Name="prCust_OrgId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RatCustId_FK">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Ratings" Type="Self.Ratings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="Cust_id" />
+      </Principal>
+      <Dependent Role="Ratings">
+        <PropertyRef Name="Rat_CustId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RatOrgId_FK">
+    <End Role="Organization" Type="Self.Organization" Multiplicity="0..1" />
+    <End Role="Ratings" Type="Self.Ratings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Organization">
+        <PropertyRef Name="org_id" />
+      </Principal>
+      <Dependent Role="Ratings">
+        <PropertyRef Name="Rat_orgId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Reg_Status_FK">
+    <End Role="laborApplicationStatus" Type="Self.laborApplicationStatus" Multiplicity="0..1" />
+    <End Role="Registration4" Type="Self.Registration4" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="laborApplicationStatus">
+        <PropertyRef Name="labAppstat_Id" />
+      </Principal>
+      <Dependent Role="Registration4">
+        <PropertyRef Name="Status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RevCust_ID_FK">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+    <End Role="Reviews" Type="Self.Reviews" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="Cust_id" />
+      </Principal>
+      <Dependent Role="Reviews">
+        <PropertyRef Name="Rev_CustId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Review_Cust_Id_Fk">
+    <End Role="Organization" Type="Self.Organization" Multiplicity="0..1" />
+    <End Role="Reviews" Type="Self.Reviews" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Organization">
+        <PropertyRef Name="org_id" />
+      </Principal>
+      <Dependent Role="Reviews">
+        <PropertyRef Name="Rev_orgId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Role_Id_FK">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="0..1" />
+    <End Role="Registration" Type="Self.Registration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="Role_Id" />
+      </Principal>
+      <Dependent Role="Registration">
+        <PropertyRef Name="Roles" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Role_Id_FK2">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="0..1" />
+    <End Role="Registration2" Type="Self.Registration2" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="Role_Id" />
+      </Principal>
+      <Dependent Role="Registration2">
+        <PropertyRef Name="Roles" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Role_Id_FK4">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="0..1" />
+    <End Role="Registration4" Type="Self.Registration4" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="Role_Id" />
+      </Principal>
+      <Dependent Role="Registration4">
+        <PropertyRef Name="Roles" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Status_FK">
+    <End Role="Status" Type="Self.Status" Multiplicity="0..1" />
+    <End Role="Complaints" Type="Self.Complaints" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="St_ID" />
+      </Principal>
+      <Dependent Role="Complaints">
+        <PropertyRef Name="Status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="RCMSModelStoreContainer">
+    <EntitySet Name="Complaints" EntityType="Self.Complaints" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LabAsign" EntityType="Self.LabAsign" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Labor" EntityType="Self.Labor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="laborApplicationStatus" EntityType="Self.laborApplicationStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Organization" EntityType="Self.Organization" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PayrollCust" EntityType="Self.PayrollCust" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="payrollLab" EntityType="Self.payrollLab" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rating_Values" EntityType="Self.Rating_Values" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ratings" EntityType="Self.Ratings" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Registration" EntityType="Self.Registration" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Registration2" EntityType="Self.Registration2" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Registration4" EntityType="Self.Registration4" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Reviews" EntityType="Self.Reviews" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="CHECK_Ratings_Values" Association="Self.CHECK_Ratings_Values">
+      <End Role="Rating_Values" EntitySet="Rating_Values" />
+      <End Role="Ratings" EntitySet="Ratings" />
+    </AssociationSet>
+    <AssociationSet Name="Cmplnt_orgId_FK" Association="Self.Cmplnt_orgId_FK">
+      <End Role="Organization" EntitySet="Organization" />
+      <End Role="Complaints" EntitySet="Complaints" />
+    </AssociationSet>
+    <AssociationSet Name="Complnt_Cust_Id_Fk" Association="Self.Complnt_Cust_Id_Fk">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="Complaints" EntitySet="Complaints" />
+    </AssociationSet>
+    <AssociationSet Name="Lab_OrgId_FK" Association="Self.Lab_OrgId_FK">
+      <End Role="Organization" EntitySet="Organization" />
+      <End Role="Labor" EntitySet="Labor" />
+    </AssociationSet>
+    <AssociationSet Name="Lab_status_FK" Association="Self.Lab_status_FK">
+      <End Role="laborApplicationStatus" EntitySet="laborApplicationStatus" />
+      <End Role="Labor" EntitySet="Labor" />
+    </AssociationSet>
+    <AssociationSet Name="LabAs_CmplntId_FK" Association="Self.LabAs_CmplntId_FK">
+      <End Role="Complaints" EntitySet="Complaints" />
+      <End Role="LabAsign" EntitySet="LabAsign" />
+    </AssociationSet>
+    <AssociationSet Name="LabAs_labId_FK" Association="Self.LabAs_labId_FK">
+      <End Role="Labor" EntitySet="Labor" />
+      <End Role="LabAsign" EntitySet="LabAsign" />
+    </AssociationSet>
+    <AssociationSet Name="LabAs_orgId_FK" Association="Self.LabAs_orgId_FK">
+      <End Role="Organization" EntitySet="Organization" />
+      <End Role="LabAsign" EntitySet="LabAsign" />
+    </AssociationSet>
+    <AssociationSet Name="Org_Id_FK" Association="Self.Org_Id_FK">
+      <End Role="Organization" EntitySet="Organization" />
+      <End Role="Registration4" EntitySet="Registration4" />
+    </AssociationSet>
+    <AssociationSet Name="PayrollLab_FK" Association="Self.PayrollLab_FK">
+      <End Role="Organization" EntitySet="Organization" />
+      <End Role="payrollLab" EntitySet="payrollLab" />
+    </AssociationSet>
+    <AssociationSet Name="PayrollLab_lab_FK" Association="Self.PayrollLab_lab_FK">
+      <End Role="Labor" EntitySet="Labor" />
+      <End Role="payrollLab" EntitySet="payrollLab" />
+    </AssociationSet>
+    <AssociationSet Name="prCust_CustId_FK" Association="Self.prCust_CustId_FK">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="PayrollCust" EntitySet="PayrollCust" />
+    </AssociationSet>
+    <AssociationSet Name="prCust_OrgId_FK" Association="Self.prCust_OrgId_FK">
+      <End Role="Organization" EntitySet="Organization" />
+      <End Role="PayrollCust" EntitySet="PayrollCust" />
+    </AssociationSet>
+    <AssociationSet Name="RatCustId_FK" Association="Self.RatCustId_FK">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="Ratings" EntitySet="Ratings" />
+    </AssociationSet>
+    <AssociationSet Name="RatOrgId_FK" Association="Self.RatOrgId_FK">
+      <End Role="Organization" EntitySet="Organization" />
+      <End Role="Ratings" EntitySet="Ratings" />
+    </AssociationSet>
+    <AssociationSet Name="Reg_Status_FK" Association="Self.Reg_Status_FK">
+      <End Role="laborApplicationStatus" EntitySet="laborApplicationStatus" />
+      <End Role="Registration4" EntitySet="Registration4" />
+    </AssociationSet>
+    <AssociationSet Name="RevCust_ID_FK" Association="Self.RevCust_ID_FK">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="Reviews" EntitySet="Reviews" />
+    </AssociationSet>
+    <AssociationSet Name="Review_Cust_Id_Fk" Association="Self.Review_Cust_Id_Fk">
+      <End Role="Organization" EntitySet="Organization" />
+      <End Role="Reviews" EntitySet="Reviews" />
+    </AssociationSet>
+    <AssociationSet Name="Role_Id_FK" Association="Self.Role_Id_FK">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Registration" EntitySet="Registration" />
+    </AssociationSet>
+    <AssociationSet Name="Role_Id_FK2" Association="Self.Role_Id_FK2">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Registration2" EntitySet="Registration2" />
+    </AssociationSet>
+    <AssociationSet Name="Role_Id_FK4" Association="Self.Role_Id_FK4">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Registration4" EntitySet="Registration4" />
+    </AssociationSet>
+    <AssociationSet Name="Status_FK" Association="Self.Status_FK">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Complaints" EntitySet="Complaints" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

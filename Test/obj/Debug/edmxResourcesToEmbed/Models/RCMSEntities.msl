@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RCMSModelStoreContainer" CdmEntityContainer="RCMSEntities">
+    <EntitySetMapping Name="Complaints">
+      <EntityTypeMapping TypeName="RCMSModel.Complaint">
+        <MappingFragment StoreEntitySet="Complaints">
+          <ScalarProperty Name="Cmplnt_Id" ColumnName="Cmplnt_Id" />
+          <ScalarProperty Name="Cmplnt_CustId" ColumnName="Cmplnt_CustId" />
+          <ScalarProperty Name="Cmplnt_orgId" ColumnName="Cmplnt_orgId" />
+          <ScalarProperty Name="Cmplnt_date" ColumnName="Cmplnt_date" />
+          <ScalarProperty Name="Complnt_content" ColumnName="Complnt_content" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="RCMSModel.Customer">
+        <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="Cust_id" ColumnName="Cust_id" />
+          <ScalarProperty Name="Cust_Firstname" ColumnName="Cust_Firstname" />
+          <ScalarProperty Name="Cust_Lastname" ColumnName="Cust_Lastname" />
+          <ScalarProperty Name="Cust_Address" ColumnName="Cust_Address" />
+          <ScalarProperty Name="cust_cellno" ColumnName="cust_cellno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LabAsigns">
+      <EntityTypeMapping TypeName="RCMSModel.LabAsign">
+        <MappingFragment StoreEntitySet="LabAsign">
+          <ScalarProperty Name="LbAs_id" ColumnName="LbAs_id" />
+          <ScalarProperty Name="LbAs_orgId" ColumnName="LbAs_orgId" />
+          <ScalarProperty Name="LbAs_LabId" ColumnName="LbAs_LabId" />
+          <ScalarProperty Name="LbAs_date" ColumnName="LbAs_date" />
+          <ScalarProperty Name="LbAs_CmplntId" ColumnName="LbAs_CmplntId" />
+          <ScalarProperty Name="LbAs_complStatus" ColumnName="LbAs_complStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Labors">
+      <EntityTypeMapping TypeName="RCMSModel.Labor">
+        <MappingFragment StoreEntitySet="Labor">
+          <ScalarProperty Name="Lab_id" ColumnName="Lab_id" />
+          <ScalarProperty Name="Lab_name" ColumnName="Lab_name" />
+          <ScalarProperty Name="Lab_OrgId" ColumnName="Lab_OrgId" />
+          <ScalarProperty Name="Lab_status" ColumnName="Lab_status" />
+          <ScalarProperty Name="Ph_no" ColumnName="Ph_no" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="laborApplicationStatus">
+      <EntityTypeMapping TypeName="RCMSModel.laborApplicationStatu">
+        <MappingFragment StoreEntitySet="laborApplicationStatus">
+          <ScalarProperty Name="labAppstat_Id" ColumnName="labAppstat_Id" />
+          <ScalarProperty Name="labAppStatus_s" ColumnName="labAppStatus_s" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Organizations">
+      <EntityTypeMapping TypeName="RCMSModel.Organization">
+        <MappingFragment StoreEntitySet="Organization">
+          <ScalarProperty Name="org_id" ColumnName="org_id" />
+          <ScalarProperty Name="org_name" ColumnName="org_name" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="Ph_no" ColumnName="Ph_no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PayrollCusts">
+      <EntityTypeMapping TypeName="RCMSModel.PayrollCust">
+        <MappingFragment StoreEntitySet="PayrollCust">
+          <ScalarProperty Name="prCust_id" ColumnName="prCust_id" />
+          <ScalarProperty Name="prCust_OrgId" ColumnName="prCust_OrgId" />
+          <ScalarProperty Name="prCust_CustId" ColumnName="prCust_CustId" />
+          <ScalarProperty Name="prCust_paymnt" ColumnName="prCust_paymnt" />
+          <ScalarProperty Name="prCust_date" ColumnName="prCust_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="payrollLabs">
+      <EntityTypeMapping TypeName="RCMSModel.payrollLab">
+        <MappingFragment StoreEntitySet="payrollLab">
+          <ScalarProperty Name="prLab_id" ColumnName="prLab_id" />
+          <ScalarProperty Name="prLab_OrgId" ColumnName="prLab_OrgId" />
+          <ScalarProperty Name="prLab_LabId" ColumnName="prLab_LabId" />
+          <ScalarProperty Name="prLab_paymnt" ColumnName="prLab_paymnt" />
+          <ScalarProperty Name="prLab_date" ColumnName="prLab_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rating_Values">
+      <EntityTypeMapping TypeName="RCMSModel.Rating_Values">
+        <MappingFragment StoreEntitySet="Rating_Values">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="values" ColumnName="values" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ratings">
+      <EntityTypeMapping TypeName="RCMSModel.Rating">
+        <MappingFragment StoreEntitySet="Ratings">
+          <ScalarProperty Name="Rat_Id" ColumnName="Rat_Id" />
+          <ScalarProperty Name="Rat_CustId" ColumnName="Rat_CustId" />
+          <ScalarProperty Name="Rat_orgId" ColumnName="Rat_orgId" />
+          <ScalarProperty Name="Rat_value" ColumnName="Rat_value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Registrations">
+      <EntityTypeMapping TypeName="RCMSModel.Registration">
+        <MappingFragment StoreEntitySet="Registration">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Phone_no" ColumnName="Phone_no" />
+          <ScalarProperty Name="Roles" ColumnName="Roles" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Registration2">
+      <EntityTypeMapping TypeName="RCMSModel.Registration2">
+        <MappingFragment StoreEntitySet="Registration2">
+          <ScalarProperty Name="Org_Name" ColumnName="Org_Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Ph_no" ColumnName="Ph_no" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Roles" ColumnName="Roles" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Registration4">
+      <EntityTypeMapping TypeName="RCMSModel.Registration4">
+        <MappingFragment StoreEntitySet="Registration4">
+          <ScalarProperty Name="First_name" ColumnName="First_name" />
+          <ScalarProperty Name="Last_name" ColumnName="Last_name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Ph_no" ColumnName="Ph_no" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Roles" ColumnName="Roles" />
+          <ScalarProperty Name="Org_ID" ColumnName="Org_ID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reviews">
+      <EntityTypeMapping TypeName="RCMSModel.Review">
+        <MappingFragment StoreEntitySet="Reviews">
+          <ScalarProperty Name="Rev_Id" ColumnName="Rev_Id" />
+          <ScalarProperty Name="Rev_CustId" ColumnName="Rev_CustId" />
+          <ScalarProperty Name="Rev_orgId" ColumnName="Rev_orgId" />
+          <ScalarProperty Name="Rev_date" ColumnName="Rev_date" />
+          <ScalarProperty Name="Rev_content" ColumnName="Rev_content" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="RCMSModel.Role">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="Role_Id" ColumnName="Role_Id" />
+          <ScalarProperty Name="Role_name" ColumnName="Role_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Status">
+      <EntityTypeMapping TypeName="RCMSModel.Status">
+        <MappingFragment StoreEntitySet="Status">
+          <ScalarProperty Name="St_ID" ColumnName="St_ID" />
+          <ScalarProperty Name="State" ColumnName="State" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="RCMSModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="RCMSModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="RCMSModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="RCMSModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="RCMSModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RCMSModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="RCMSModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RCMSModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="RCMSModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="RCMSModel.Store.sp_upgraddiagrams" />
+  </EntityContainerMapping>
+</Mapping>

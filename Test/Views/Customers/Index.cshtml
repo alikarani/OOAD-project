@@ -1,0 +1,109 @@
+﻿@model IEnumerable<Test.Models.Customer>
+
+@{
+    ViewBag.Title = "Customer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Customer</h2>
+
+<table class="table table-hover text-white table-bordered">
+    <tr class="table-primary text-white">
+        <th>
+            Email
+        </th>
+        <th>
+            First Name
+        </th>
+        <th>
+            Last Name
+        </th>
+        <th>
+            Address
+        </th>
+        <th>
+            Cell no
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        if (item.Email == (string)Session["CustEmail"])
+        {
+            Session["CustId"] = item.Cust_id;
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cust_Firstname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cust_Lastname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cust_Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cust_cellno)
+        </td>
+        <td>
+            @*@Html.ActionLink("Edit", "Edit", new { id = item.Cust_id }) |*@
+            @Html.ActionLink("Details", "Details", new { id = item.Cust_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Cust_id })
+        </td>
+    </tr>
+        <tr></tr>
+        }
+    }
+
+
+</table>
+<br />
+<br />
+<br />
+
+<div class="row">
+    <div class="col-md-3 border-primary">
+        <div class="card border-primary mb-3" style="max-width: 20rem;">
+            <div class="card-body">
+                <h4 class="btn btn-lg btn-block btn-outline-primary">@Html.ActionLink("Complaints", "Index", "Complaints")</h4>
+                <p class="card-text">
+                    Please Don't waste your time reading this
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 border-primary">
+        <div class="card border-primary mb-3" style="max-width: 20rem;">
+            <div class="card-body">
+                <h4 class="btn btn-lg btn-block btn-outline-primary"> @Html.ActionLink("Reviews", "Index", "Reviews")</h4>
+                <p class="card-text">
+                    Please Don't waste your time reading this
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 border-primary">
+        <div class="card border-primary mb-3" style="max-width: 20rem;">
+            <div class="card-body">
+                <h4 class="btn btn-lg btn-block btn-outline-primary"> @Html.ActionLink("Ratings", "Index", "Ratings")</h4>                
+                <p class="card-text">
+                    Please Don't waste your time reading this
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 border-primary">
+        <div class="card border-primary mb-3" style="max-width: 20rem;">
+            <div class="card-body">
+                <h4 class="btn btn-lg btn-block btn-outline-primary"> @Html.ActionLink("Pay to Organization","Index", "PayrollCusts")</h4>                
+                <p class="card-text">
+                    Please Don't waste your time reading this
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

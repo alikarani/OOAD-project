@@ -1,0 +1,92 @@
+﻿@model IEnumerable<Test.Models.Labor>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-hover text-white table-bordered">
+    <tr class="table-primary text-white">
+        <th>
+            @Html.DisplayNameFor(model => model.Lab_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ph_no)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Organization.org_name)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lab_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ph_no)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Organization.org_name)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Lab_id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Lab_id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Lab_id })
+            </td>
+        </tr>
+    }
+
+</table>
+
+<div class="row">
+    <div class="col-md-4 border-primary">
+        <div class="card border-primary mb-3" style="max-width: 20rem;">
+            <div class="card-body">
+                <h4 class="card-title"><a class="btn btn-lg btn-block btn-outline-primary" href=@Url.Action("Index", "Complaints")>Complaints</a></h4>
+                <p class="card-text">
+                    Please Don't waste your time reading this
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 border-primary">
+        <div class="card border-primary mb-3" style="max-width: 20rem;">
+            <div class="card-body">
+                <h4 class="card-title"><a class="btn btn-lg btn-block btn-outline-primary" href=@Url.Action("Index", "LabAsigns")>My Assignments</a></h4>
+                <p class="card-text">
+                    Please Don't waste your time reading this
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 border-primary">
+        <div class="card border-primary mb-3" style="max-width: 20rem;">
+            <div class="card-body">
+                <h4 class="card-title"><a class="btn btn-lg btn-block btn-outline-primary" href=@Url.Action("Index", "payrollLabs")>My Pay</a></h4>
+                <p class="card-text">
+                    Please Don't waste your time reading this
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

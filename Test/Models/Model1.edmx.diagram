@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="11537b2a698f43f2bf9a81057be91467" Name="Diagram1">
+        <EntityTypeShape EntityType="RCMSModel.Authentication" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RCMSModel.Complaint" Width="1.5" PointX="5.25" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RCMSModel.Customer" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="RCMSModel.LabAsign" Width="1.5" PointX="10.5" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RCMSModel.Labor" Width="1.5" PointX="8.25" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RCMSModel.Organization" Width="1.5" PointX="3" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RCMSModel.PayrollCust" Width="1.5" PointX="8.25" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RCMSModel.payrollLab" Width="1.5" PointX="10.5" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RCMSModel.Rating_Values" Width="1.5" PointX="3" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="RCMSModel.Rating" Width="1.5" PointX="5.25" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RCMSModel.Review" Width="1.5" PointX="5.25" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RCMSModel.Role" Width="1.5" PointX="0.75" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RCMSModel.Status" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
+        <AssociationConnector Association="RCMSModel.Cmplnt_CustID_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="RCMSModel.Cmplnt_orgId_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="RCMSModel.Complnt_Cust_Id_Fk" ManuallyRouted="false" />
+        <AssociationConnector Association="RCMSModel.LabAs_CmplntId_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="RCMSModel.LbAs_CmplntId_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="RCMSModel.Status_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="RCMSModel.CustRole_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="RCMSModel.prCust_CustId_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="RCMSModel.RatCustId_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="RCMSModel.Rev_CustId_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="RCMSModel.RevCust_ID_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="RCMSModel.complStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="RCMSModel.LabAs_labId_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="RCMSModel.LabAs_orgId_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="RCMSModel.LbAs_LabId_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="RCMSModel.LbAs_orgId_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="RCMSModel.Lab_OrgId_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="RCMSModel.LabRole_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="RCMSModel.PayrollLab_lab_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="RCMSModel.prLab_LabId_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="RCMSModel.OrgRole_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="RCMSModel.prCust_OrgId_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="RCMSModel.prLab_OrgId_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="RCMSModel.RatOrgId_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="RCMSModel.Rev_orgId_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="RCMSModel.Review_Cust_Id_Fk" ManuallyRouted="false" />
+        <AssociationConnector Association="RCMSModel.FK_RatingValues" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
